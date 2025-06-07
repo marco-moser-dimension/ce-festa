@@ -3,10 +3,10 @@
 import streamlit as st
 
 # st.title() crea un titolo grande
-st.title("La mia prima App Streamlit! 🎉")
+st.title("C'è festa in campo 🎉")
 
 # st.write() può scrivere testo, numeri, dataframe e altro
-st.write("Ciao mondo, questo è più facile di quanto pensassi.")
+st.write("Applicazione per gestire il cibo che entra ed esce dal furgone del segata")
 
 # Aggiungiamo un widget interattivo
 nome_utente = st.text_input("Come ti chiami?")
