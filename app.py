@@ -29,7 +29,9 @@ def load_articles(file_path: str) -> list:
                 "codice": articolo.get("Articolo", "N/D"), 
                 "descrizione": articolo.get("Descrizione articolo", "Senza descrizione"),
                 "unita": articolo.get("Unità di misura", "N/D"),
-                "url": articolo.get("url", "")  # Aggiungiamo l'URL dell'immagine se presente
+                "url": articolo.get("url", ""),  # URL dell'immagine se presente
+                "quantita": int(articolo.get("Quantità Presa", "0")),  # Quantità presa
+                "transazioni": articolo.get("transazioni", [])  # Storico transazioni
             } 
             for articolo in data
         ]
@@ -70,7 +72,7 @@ def display_article_gallery(articles: list):
     # Utilizziamo un container a larghezza piena per la galleria
     with st.container():
         # Determiniamo il numero di colonne in base al numero di articoli
-        num_cols = 3  # Aumentiamo a 4 colonne per sfruttare meglio lo spazio
+        num_cols = 3  # Utilizziamo 3 colonne per un buon bilanciamento
         
         # Creiamo una griglia di colonne con larghezza massima
         cols = st.columns(num_cols, gap="small")
@@ -91,6 +93,12 @@ def display_article_gallery(articles: list):
                     # Riduciamo le dimensioni del testo per adattarsi meglio
                     st.markdown(f"### {articolo['descrizione']}")
                     st.caption(f"Codice: {articolo['codice']}")
+                    
+                    # Mostriamo la quantità presa
+                    st.metric(
+                        label=f"Quantità ({articolo['unita']})", 
+                        value=articolo['quantita']
+                    )
                     
                     # Il bottone per navigare alla pagina di dettaglio
                     if st.button("Visualizza", key=f"btn_{articolo['codice']}"):

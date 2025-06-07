@@ -36,6 +36,12 @@ with col1:
     st.write(f"**Codice:** {articolo['codice']}")
     st.write(f"**Unità di misura:** {articolo['unita']}")
     
+    # Visualizzazione della quantità presa con un indicatore metrico
+    st.metric(
+        label=f"Quantità Presa ({articolo['unita']})", 
+        value=articolo['quantita']
+    )
+    
     # Qui puoi aggiungere altre informazioni o funzionalità
     st.subheader("Gestione Quantità")
     
@@ -67,11 +73,51 @@ with col1:
             # Mostra il messaggio di successo
             st.success(f"Operazione completata: {operazione} {quantita} {articolo['unita']}")
             
+            # Aggiorna l'articolo nella sessione con i nuovi dati
+            if response.get("success", False):
+                # Aggiorna la quantità nell'articolo
+                st.session_state.articolo_selezionato["quantita"] += quantita_effettiva
+                
+                # Aggiungi la transazione all'articolo nella sessione
+                if "transazioni" not in st.session_state.articolo_selezionato:
+                    st.session_state.articolo_selezionato["transazioni"] = []
+                
+                st.session_state.articolo_selezionato["transazioni"].append({
+                    "time": ora_corrente,
+                    "referente": username,
+                    "quantità": quantita_effettiva
+                })
+                
+                # Ricarica la pagina per mostrare i dati aggiornati
+                st.rerun()
 
 with col2:
     st.subheader("Movimenti Recenti")
-    # Qui potresti mostrare una tabella con i movimenti recenti dell'articolo
-    st.info("Funzionalità in sviluppo")
+    
+    # Verifica se ci sono transazioni per questo articolo
+    if 'transazioni' in articolo and articolo['transazioni']:
+        # Crea una tabella con le transazioni
+        transazioni_data = []
+        for trans in articolo['transazioni']:
+            # Determina se è un'aggiunta o una rimozione
+            operazione = "Aggiunta" if int(trans.get('quantità', 0)) > 0 else "Rimozione"
+            quantita_abs = abs(int(trans.get('quantità', 0)))
+            
+            transazioni_data.append({
+                "Ora": trans.get('time', 'N/D'),
+                "Operazione": operazione,
+                "Quantità": quantita_abs,
+                "Utente": trans.get('referente', 'N/D')
+            })
+        
+        # Mostra la tabella delle transazioni
+        st.dataframe(
+            transazioni_data,
+            use_container_width=True,
+            hide_index=True
+        )
+    else:
+        st.info("Nessun movimento registrato per questo articolo")
 
 # Pulsante per tornare alla homepage
 if st.button("Torna alla Homepage"):
