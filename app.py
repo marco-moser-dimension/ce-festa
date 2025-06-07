@@ -1,62 +1,127 @@
-# app.py (La nuova Homepage con la Galleria)
-#TODO da aggiungere la search bar
+# app.py (Versione Semplificata, Pulita e Funzionale)
 
 import streamlit as st
 import json
-# Ora importiamo da pages.login
 from pages.login import login_flow 
 
-data_file_path = './data.json'
+# Configurazione della pagina per massimizzare lo spazio
+st.set_page_config(
+    page_title="Homepage Magazzino", 
+    page_icon="🏠", 
+    layout="wide",
+    initial_sidebar_state="collapsed"  # Collassa la sidebar per massimizzare lo spazio
+)
 
-# --- CONFIGURAZIONE PAGINA ---
-st.set_page_config(page_title="Homepage Magazzino", page_icon="🏠", layout="wide")
+# --- 1. FUNZIONI DI SUPPORTO (Logica Incapsulata) ---
 
-def carica_articoli(file_path):
+def load_articles(file_path: str) -> list:
     """
-    Carica gli articoli dal file JSON e li mappa nel formato richiesto
+    Carica e mappa gli articoli da un file JSON.
+    Restituisce una lista di dizionari.
     """
-    with open(file_path, 'r') as file:
-        articoli_completi = json.load(file)
-    
-    # Mappa i dati nel formato richiesto
-    articoli_mappati = [
-        {
-            "codice": articolo["Articolo"], 
-            "descrizione": articolo["Descrizione articolo"],
-            "unita": articolo["Unità di misura"]
-        } 
-        for articolo in articoli_completi[:]
-    ]
-    
-    return articoli_mappati
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+        
+        # Mappa i dati nel formato che ci serve per l'app
+        return [
+            {
+                "codice": articolo.get("Articolo", "N/D"), 
+                "descrizione": articolo.get("Descrizione articolo", "Senza descrizione"),
+                "unita": articolo.get("Unità di misura", "N/D"),
+                "url": articolo.get("url", "")  # Aggiungiamo l'URL dell'immagine se presente
+            } 
+            for articolo in data
+        ]
+    except FileNotFoundError:
+        st.error(f"Errore: File non trovato al percorso '{file_path}'")
+        return []
+    except json.JSONDecodeError:
+        st.error(f"Errore: Il file '{file_path}' non è un JSON valido.")
+        return []
 
+def display_header_and_search_bar():
+    """
+    Mostra il titolo della pagina e la barra di ricerca.
+    La magia della ricerca live avviene qui.
+    """
+    st.title("Dashboard Magazzino 📦")
+    st.write("Cerca un articolo o selezionalo dalla lista per vederne i dettagli.")
 
-# --- GESTIONE LOGIN ---
-# Il login protegge TUTTA l'app. Lo mettiamo qui.
+    # Questo è il modo più semplice e robusto per una ricerca live:
+    # 1. 'key' collega il valore del widget a st.session_state.search_query.
+    # 2. Ogni volta che l'utente digita, lo stato cambia e Streamlit riesegue lo script.
+    st.text_input(
+        "Cerca un articolo per descrizione...",
+        key="search_query", # La chiave è tutto ciò che serve
+        placeholder="Es. pasta, formaggio, acqua..."
+    )
+
+def display_article_gallery(articles: list):
+    """
+    Mostra una galleria di card data una lista di articoli.
+    """
+    st.divider()
+
+    if not articles:
+        st.warning("Nessun articolo trovato per la tua ricerca.")
+        return
+
+    # Utilizziamo un container a larghezza piena per la galleria
+    with st.container():
+        # Determiniamo il numero di colonne in base al numero di articoli
+        num_cols = 3  # Aumentiamo a 4 colonne per sfruttare meglio lo spazio
+        
+        # Creiamo una griglia di colonne con larghezza massima
+        cols = st.columns(num_cols, gap="small")
+        
+        # Iteriamo sulla lista di articoli e creiamo una card per ognuno
+        for i, articolo in enumerate(articles):
+            with cols[i % num_cols]:
+                with st.container(border=True):
+                    # Se è presente un URL dell'immagine, la mostriamo
+                    if articolo.get('url') and articolo['url'].strip():
+                        # Utilizziamo st.image con dimensioni ridotte
+                        st.image(
+                            articolo['url'],
+                            width=150,  # Larghezza ridotta
+                            output_format="JPEG"  # Formato più leggero
+                        )
+                    
+                    # Riduciamo le dimensioni del testo per adattarsi meglio
+                    st.markdown(f"### {articolo['descrizione']}")
+                    st.caption(f"Codice: {articolo['codice']}")
+                    
+                    # Il bottone per navigare alla pagina di dettaglio
+                    if st.button("Visualizza", key=f"btn_{articolo['codice']}"):
+                        st.session_state.articolo_selezionato = articolo
+                        st.switch_page("pages/dettaglio_articolo.py")
+
+# --- 2. FLUSSO PRINCIPALE DELL'APPLICAZIONE ---
+
+# Esegui il login. Se non va a buon fine, ferma tutto.
 if not login_flow():
-    st.stop() # Ferma l'esecuzione se l'utente non è loggato
+    st.stop()
 
-# --- Contenuto della Homepage ---
-st.title("Dashboard Magazzino 📦")
-st.write("Seleziona un articolo per vedere i dettagli o aggiungerne di nuovi.")
+# Inizializza la variabile di stato per la ricerca, se non esiste
+if "search_query" not in st.session_state:
+    st.session_state.search_query = ""
 
+# Carica i dati una sola volta
+tutti_gli_articoli = load_articles('./data.json')
 
-# Carica gli articoli per la dashboard
-articoli_esempio = carica_articoli(data_file_path)
+# Mostra l'intestazione e la barra di ricerca
+display_header_and_search_bar()
 
-# Creiamo una griglia di 3 colonne
-col1, col2, col3 = st.columns(3)
-colonne = [col1, col2, col3]
+# Filtra gli articoli in base alla query di ricerca (che è in st.session_state)
+query = st.session_state.search_query.lower()
+if query:
+    articoli_filtrati = [
+        articolo for articolo in tutti_gli_articoli 
+        if query in articolo["descrizione"].lower() or query in articolo["codice"].lower()
+    ]
+else:
+    articoli_filtrati = tutti_gli_articoli[:40]  # Limitiamo a 40 articoli per default per migliorare le performance
 
-for i, articolo in enumerate(articoli_esempio):
-    with colonne[i % 3]:
-        with st.container(border=True):
-            st.subheader(articolo["descrizione"])
-            st.caption(f"Codice: {articolo['codice']}")
-            
-            # Aggiungiamo un bottone per rendere la card cliccabile
-            if st.button("Visualizza dettagli", key=f"btn_{articolo['codice']}"):
-                # Salva l'articolo selezionato nella sessione
-                st.session_state.articolo_selezionato = articolo
-                # Reindirizza alla pagina dei dettagli
-                st.switch_page("pages/dettaglio_articolo.py")
+# Mostra la galleria con gli articoli filtrati
+display_article_gallery(articoli_filtrati)
