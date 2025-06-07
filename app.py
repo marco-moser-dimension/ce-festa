@@ -1,4 +1,5 @@
 # app.py (La nuova Homepage con la Galleria)
+#TODO da aggiungere la search bar
 
 import streamlit as st
 import json

@@ -1,5 +1,7 @@
 import streamlit as st
 import json
+import datetime
+from api_manager import upload
 
 # --- CONFIGURAZIONE PAGINA ---
 st.set_page_config(page_title="Dettaglio Articolo", page_icon="📦", layout="wide")
@@ -10,6 +12,16 @@ if "articolo_selezionato" not in st.session_state:
     if st.button("Torna alla Homepage"):
         st.switch_page("app.py")
     st.stop()
+
+# Verifica se l'utente è autenticato
+if "username" not in st.session_state:
+    # Prova a recuperare lo username dall'authenticator
+    if "authentication_status" in st.session_state and st.session_state.authentication_status:
+        if "username" in st.session_state:
+            username = st.session_state.username
+        else:
+            st.warning("Sessione utente non trovata. Alcune funzionalità potrebbero essere limitate.")
+            st.session_state.username = "utente_sconosciuto"
 
 # Recupera l'articolo selezionato
 articolo = st.session_state.articolo_selezionato
@@ -31,12 +43,30 @@ with col1:
     with st.form("modifica_quantita"):
         operazione = st.radio("Operazione:", ["Aggiungi", "Rimuovi"])
         quantita = st.number_input("Quantità:", min_value=1, value=1)
-        note = st.text_area("Note:", placeholder="Inserisci eventuali note...")
         
         submit = st.form_submit_button("Conferma Operazione")
         if submit:
-            # Qui implementerai la logica per aggiornare la quantità
+            # Formatta l'ora nel formato h:m:s
+            ora_corrente = datetime.datetime.now().strftime("%H:%M:%S")
+            
+            # Ottieni lo username dell'utente corrente dalla sessione
+            username = st.session_state.get("username", "utente_sconosciuto")
+            
+            # Determina il segno della quantità in base all'operazione
+            quantita_effettiva = quantita if operazione == "Aggiungi" else -quantita
+            
+            # Chiama la funzione upload per registrare il movimento
+            response = upload(
+                articolo=articolo['codice'],
+                alimento=articolo['descrizione'],
+                quantità=quantita_effettiva,
+                time=ora_corrente,
+                referente=username
+            )
+            
+            # Mostra il messaggio di successo
             st.success(f"Operazione completata: {operazione} {quantita} {articolo['unita']}")
+            
 
 with col2:
     st.subheader("Movimenti Recenti")
