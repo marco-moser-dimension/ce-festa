@@ -1,4 +1,4 @@
-# pages/login.py
+# pages/login.py (VERSIONE DEFINITIVA E CORRETTA)
 
 import streamlit as st
 import streamlit_authenticator as stauth
@@ -9,14 +9,16 @@ def login_flow():
     Restituisce True se l'utente è autenticato, False altrimenti.
     """
     try:
-        # Legge la configurazione direttamente dai secrets di Streamlit
-        config = st.secrets
+        # ================================================================= #
+        # MODIFICA CHIAVE: Convertiamo la sezione 'credentials' in un vero dizionario #
+        # ================================================================= #
 
+        credentials = st.secrets.credentials.to_dict()
         authenticator = stauth.Authenticate(
-            config.credentials, # Usa la notazione a punto
-            config.cookie.name,
-            config.cookie.key,
-            config.cookie.expiry_days
+            credentials,
+            st.secrets.cookie.name,
+            st.secrets.cookie.key,
+            st.secrets.cookie.expiry_days
         )
 
         authenticator.login()
@@ -32,8 +34,12 @@ def login_flow():
             
             # Salva i ruoli dell'utente nella sessione
             username = st.session_state["username"]
-            user_info = config.credentials.usernames[username]
-            st.session_state["user_roles"] = user_info.get('roles', ['viewer'])
+            try:
+                # Ora leggiamo i ruoli dal dizionario 'credentials' che abbiamo creato
+                user_roles = credentials['usernames'][username]['roles']
+                st.session_state["user_roles"] = user_roles
+            except (AttributeError, KeyError):
+                st.session_state["user_roles"] = ["viewer"]
             
             return True
         
