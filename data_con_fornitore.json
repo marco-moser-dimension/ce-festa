@@ -93,9 +93,10 @@
             "Articolo": "780705",
             "Descrizione_articolo": "CIPOLLE DORATE KG.10 FRESCHE",
             "Unita_di_misura": "KG",
-            "Quantita_in_ordine": "30",
+            "Quantita_in_ordine": "30.0",
             "Quantita_Usata": "0",
-            "Fornitore": "Segata"
+            "Fornitore": "Segata",
+            "url": "https://www.laboutiquedelbiologico.it/4354-medium_default/cipolle-dorate-bio-250-g.jpg"
         },
         {
             "Articolo": "708222",
