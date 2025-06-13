@@ -1,77 +1,68 @@
-# app.py (Versione Semplificata, Pulita e Funzionale)
+# app.py (Versione aggiornata per MongoDB)
 
 import streamlit as st
-import json
-import os
 from pages.login import login_flow
-from src.db import search_articles, get_all_articles, read_data
+# 1. MODIFICA: Importiamo le funzioni corrette da src.db
+from src.db import search_articles, get_all_articles 
 from utils import display_article_gallery
 from pages.fornitori import app as fornitori_app
 
-# Configurazione della pagina per massimizzare lo spazio
+# Configurazione della pagina (invariata)
 st.set_page_config(
     page_title="Homepage Magazzino", 
     page_icon="🏠", 
     layout="wide",
-    initial_sidebar_state="collapsed"  # Collassa la sidebar per massimizzare lo spazio
+    initial_sidebar_state="collapsed"
 )
 
 # --- FLUSSO PRINCIPALE DELL'APPLICAZIONE ---
 
-# Esegui il login. Se non va a buon fine, ferma tutto.
+# Esegui il login (invariato)
 if not login_flow():
     st.stop()
 
-# Inizializza le variabili di stato, se non esistono
+# Inizializza le variabili di stato (invariato)
 if "search_query" not in st.session_state:
     st.session_state.search_query = ""
-    
 if "categoria_selezionata" not in st.session_state:
     st.session_state.categoria_selezionata = "Tutte"
-    
 if "page" not in st.session_state:
     st.session_state.page = "home"
-    
-# Reset delle variabili di stato di navigazione quando si torna alla dashboard
 if "go_to_dashboard" in st.session_state:
     st.session_state.go_to_dashboard = False
-    
 if "show_delete_confirm" in st.session_state:
     st.session_state.show_delete_confirm = False
 
-# Ottieni il percorso del file JSON
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, 'data_con_fornitore.json')
-
-# Leggi il file JSON per ottenere le categorie
+# 2. MODIFICA: Otteniamo le categorie direttamente da MongoDB
+#    Questa sezione sostituisce la lettura del file JSON.
 try:
-    data = read_data(DATA_FILE)
-    categorie = list(data.keys())
-    # Aggiungi l'opzione "Tutte" all'inizio
-    categorie = ["Tutte"] + categorie
+    # Chiamiamo get_all_articles senza filtri per avere tutti i dati
+    tutti_gli_articoli = get_all_articles() 
+    # Estraiamo le categorie uniche dai dati e le ordiniamo
+    if tutti_gli_articoli:
+        categorie_uniche = sorted(list(set(articolo['categoria'] for articolo in tutti_gli_articoli)))
+        categorie = ["Tutte"] + categorie_uniche
+    else:
+        categorie = ["Tutte"]
 except Exception as e:
-    st.error(f"Errore nel caricamento delle categorie: {str(e)}")
+    st.error(f"Errore nel caricamento delle categorie dal database: {str(e)}")
     categorie = ["Tutte"]
 
-# --- Intestazione e barra di ricerca ---
+# --- Intestazione e barra di ricerca (invariato) ---
 st.title("Dashboard Magazzino 📦")
 st.write("Cerca un articolo o selezionalo dalla lista per vederne i dettagli.")
 
-# Aggiungi un pulsante per navigare alla pagina dei fornitori
 if st.button("Visualizza per Fornitore 🏭"):
     st.session_state.page = "fornitori"
     st.rerun()
 
-# Controlla se siamo nella pagina dei fornitori
 if st.session_state.get("page") == "fornitori":
     fornitori_app()
     st.stop()
 
-# Layout con due colonne per la ricerca e il selettore di categorie
 col1, col2 = st.columns([3, 1])
 
 with col1:
-    # Campo di ricerca
     st.text_input(
         "Cerca un articolo per descrizione...",
         key="search_query",
@@ -79,30 +70,30 @@ with col1:
     )
 
 with col2:
-    # Selettore di categorie
     st.selectbox(
         "Filtra per categoria",
         options=categorie,
         key="categoria_selezionata"
     )
 
-# Filtra gli articoli in base alla query di ricerca e alla categoria selezionata
-query = st.session_state.search_query.lower()
+# 3. MODIFICA: La logica di filtraggio ora è più semplice e diretta.
+#    Le funzioni search_articles e get_all_articles ora interrogano MongoDB.
+query = st.session_state.search_query
 categoria = st.session_state.categoria_selezionata
 
-if query:
-    articoli_filtrati = search_articles(query, categoria=categoria)
-else:
-    # Limitiamo a 40 articoli per default per migliorare le performance
-    articoli_filtrati = get_all_articles(categoria=categoria)[:40]
+# La logica di ricerca e filtraggio è gestita direttamente dalle funzioni di db.py
+# Non c'è più bisogno di un if/else separato.
+# La funzione search_articles gestisce sia il caso con query che senza.
+# NOTA: La limitazione a 40 articoli è stata rimossa, MongoDB è veloce.
+# Se vuoi reintrodurla, puoi farlo dopo la chiamata alla funzione.
+articoli_filtrati = search_articles(query, categoria=categoria)
 
-# Verifica se l'utente è admin per mostrare il pulsante di aggiunta articolo
+# Verifica se l'utente è admin (invariato)
 is_admin = False
 if "user_roles" in st.session_state and "admin" in st.session_state.user_roles:
     is_admin = True
-    # Pulsante per aggiungere un nuovo articolo
     if st.button("➕ Aggiungi Nuovo Articolo"):
         st.switch_page("pages/nuovo_articolo.py")
 
-# Mostra la galleria con gli articoli filtrati
+# Mostra la galleria con gli articoli filtrati (invariato)
 display_article_gallery(articoli_filtrati)
