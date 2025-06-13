@@ -1,489 +1,430 @@
 [
     {
         "Articolo": "434",
-        "Descrizione articolo": "WURSTEL I CLASSICI S/P 8PZ. 800 G. P.S",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "50",
-        "Quantità Presa": "0",
+        "Descrizione_articolo": "WURSTEL I CLASSICI S/P 8PZ. 800 G. P.S",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "50",
+        "Quantita_Usata": "0",
         "url": "https://www.bottegadelformaggio.it/fileadmin/bottega-del-formaggio/Import/127/Bottega-del-Formaggio-Wurstel-Meraner.jpg",
-        "transazioni": [
-            {
-                "time": "23:39:21",
-                "referente": "ggiuliani",
-                "quantità": 1
-            },
-            {
-                "time": "23:40:47",
-                "referente": "ggiuliani",
-                "quantità": -1
-            },
-            {
-                "time": "23:40:54",
-                "referente": "ggiuliani",
-                "quantità": 3
-            },
-            {
-                "time": "23:42:04",
-                "referente": "ggiuliani",
-                "quantità": -3
-            },
-            {
-                "time": "23:44:39",
-                "referente": "ggiuliani",
-                "quantità": 1
-            },
-            {
-                "time": "23:44:43",
-                "referente": "ggiuliani",
-                "quantità": -1
-            }
-        ]
+        "transazioni": []
     },
     {
         "Articolo": "604",
-        "Descrizione articolo": "PASTA LUCANICA ROTOLO  2,50 KG",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "50",
-        "Quantità Presa": "0",
+        "Descrizione_articolo": "PASTA LUCANICA ROTOLO  2,50 KG",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "50",
+        "Quantita_Usata": "1",
         "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_PCNCG5myRx1tt8y8Z_hdEMBcjNhfExX9ew&s",
-        "transazioni": [
-            {
-                "time": "23:42:16",
-                "referente": "ggiuliani",
-                "quantità": 2
-            },
-            {
-                "time": "23:42:26",
-                "referente": "ggiuliani",
-                "quantità": -2
-            }
-        ]
+        "transazioni": []
     },
     {
         "Articolo": "40782",
-        "Descrizione articolo": "MELANZANE GRIGLIATE A.FREDDO",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0",
+        "Descrizione_articolo": "MELANZANE GRIGLIATE A.FREDDO",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0",
         "url": "https://www.terramore.net/wp-content/uploads/2018/11/adobestock_178138240.jpeg"
     },
     {
         "Articolo": "40872",
-        "Descrizione articolo": "PEPERONI GRIGLIATI  A.FREDDO",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0",
+        "Descrizione_articolo": "PEPERONI GRIGLIATI  A.FREDDO",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0",
         "url": "https://www.my-personaltrainer.it/2022/09/26/peperoni-2-orig.jpeg"
     },
     {
         "Articolo": "41232",
-        "Descrizione articolo": "ZUCCHINE GRIGLIATE A.FREDDO",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ZUCCHINE GRIGLIATE A.FREDDO",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "4146",
-        "Descrizione articolo": "PATATE JULIENNE AGRAFROST",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "100",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "PATATE JULIENNE AGRAFROST",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "100",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "48009",
-        "Descrizione articolo": "ICE CUBE GHIACCIO ALIM. KG.1,25",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "30",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ICE CUBE GHIACCIO ALIM. KG.1,25",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "30",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "48659",
-        "Descrizione articolo": "EDO GELATO GHIACCIOLI PZ 50 GELIDOR",
-        "Unità di misura": "CA",
-        "Quantità in ordine": "5",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "EDO GELATO GHIACCIOLI PZ 50 GELIDOR",
+        "Unita_di_misura": "CA",
+        "Quantita_in_ordine": "5",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "6706",
-        "Descrizione articolo": "FORM.TN RETTANGOLARE STICA V.FASSA",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "30",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "FORM.TN RETTANGOLARE STICA V.FASSA",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "30",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "69595",
-        "Descrizione articolo": "LATTE UHT P.S. ALPINO LT.6",
-        "Unità di misura": "CA",
-        "Quantità in ordine": "3",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "LATTE UHT P.S. ALPINO LT.6",
+        "Unita_di_misura": "CA",
+        "Quantita_in_ordine": "3",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "7056",
-        "Descrizione articolo": "OLIO SEMI GIRASOLE LT. 1",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "12",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "OLIO SEMI GIRASOLE LT. 1",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "12",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "70564",
-        "Descrizione articolo": "OLIO SEMI GIRAS.ALTOLEICO LT.10 NATURA'S",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "OLIO SEMI GIRAS.ALTOLEICO LT.10 NATURA'S",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "70634",
-        "Descrizione articolo": "OLIO OLIVA LT.1 PET",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "3",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "OLIO OLIVA LT.1 PET",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "3",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "77912",
-        "Descrizione articolo": "ACETO VINO BIANCO LT.0,50 PONTI",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "6",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ACETO VINO BIANCO LT.0,50 PONTI",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "6",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "78013",
-        "Descrizione articolo": "CAVOLO CAPPUCCIO FRESCO",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "20",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "CAVOLO CAPPUCCIO FRESCO",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "20",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "780705",
-        "Descrizione articolo": "CIPOLLE DORATE KG.10 FRESCHE",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "30",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "CIPOLLE DORATE KG.10 FRESCHE",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "30",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "781501",
-        "Descrizione articolo": "ARANCE SPREMUTA FRESCHE",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "2",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ARANCE SPREMUTA FRESCHE",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "2",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "78173",
-        "Descrizione articolo": "LIMONI I° FRESCHI",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "2",
-        "Quantità Presa": "0",
-        "transazioni": [
-            {
-                "time": "23:42:47",
-                "referente": "ggiuliani",
-                "quantità": 1
-            },
-            {
-                "time": "23:42:58",
-                "referente": "ggiuliani",
-                "quantità": -1
-            }
-        ]
+        "Descrizione_articolo": "LIMONI I° FRESCHI",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "2",
+        "Quantita_Usata": "0",
+        "transazioni": []
     },
     {
         "Articolo": "8011",
-        "Descrizione articolo": "SALE FINO KG. 1",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "24",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SALE FINO KG. 1",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "24",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80156",
-        "Descrizione articolo": "ACQUA FRIZZANTE PEJO PET LT.0,50",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "144",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ACQUA FRIZZANTE PEJO PET LT.0,50",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "144",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80159",
-        "Descrizione articolo": "ACQUA NATURALE PEJO PET LT.0,50",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "144",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ACQUA NATURALE PEJO PET LT.0,50",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "144",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "8017",
-        "Descrizione articolo": "ZUCCHERO SEMOLATO KG. 1",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "10",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ZUCCHERO SEMOLATO KG. 1",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "10",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80250",
-        "Descrizione articolo": "BIBITA FANTA LATTINA SLEEK CL.33",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "48",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIBITA FANTA LATTINA SLEEK CL.33",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "48",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "802532",
-        "Descrizione articolo": "BIBITA COCA COLA LATTINA SLEEK CL.33",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "168",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIBITA COCA COLA LATTINA SLEEK CL.33",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "168",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80275",
-        "Descrizione articolo": "BIBITA THE PESCA S.BEN. SLEEK LATT.CL.33",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "96",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIBITA THE PESCA S.BEN. SLEEK LATT.CL.33",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "96",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "806558",
-        "Descrizione articolo": "BIO-ECO CANNUCCE NERE D.8 H.150 PZ.250",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIO-ECO CANNUCCE NERE D.8 H.150 PZ.250",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "806769",
-        "Descrizione articolo": "BIODEGR.VASCHETTA PATATINE PZ.50",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "15",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIODEGR.VASCHETTA PATATINE PZ.50",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "15",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "806785",
-        "Descrizione articolo": "PALETTA CAFFE' LEGNO MONO CM.7 PZ.1000",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "PALETTA CAFFE' LEGNO MONO CM.7 PZ.1000",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80685",
-        "Descrizione articolo": "TOVAGLIOLI 33X33 BIANCHI 2V. PZ 50",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "21",
-        "Quantità Presa": "0",
-        "transazioni": [
-            {
-                "time": "23:45:07",
-                "referente": "ggiuliani",
-                "quantità": -80685
-            }
-        ]
+        "Descrizione_articolo": "TOVAGLIOLI 33X33 BIANCHI 2V. PZ 50",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "21",
+        "Quantita_Usata": "0",
+        "transazioni": []
     },
     {
         "Articolo": "806977",
-        "Descrizione articolo": "PORTA PANINO 2LATI ANTIGRAS.17X18 PZ.500",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "2",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "PORTA PANINO 2LATI ANTIGRAS.17X18 PZ.500",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "2",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80708",
-        "Descrizione articolo": "PULIUNTO YANKEE BOB. 2 ROTOLI 580 STR.",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "3",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "PULIUNTO YANKEE BOB. 2 ROTOLI 580 STR.",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "3",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "807453",
-        "Descrizione articolo": "SPIEDI CM.10 PZ.100 BAMBU' KIMONO",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "10",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SPIEDI CM.10 PZ.100 BAMBU' KIMONO",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "10",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "81452",
-        "Descrizione articolo": "SP/PEPE NERO MACINATO G.90 PET RM",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SP/PEPE NERO MACINATO G.90 PET RM",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "708222",
-        "Descrizione articolo": "FAGIOLI BORLOTTI KG.2,60 M.JARDIN",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "13",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "FAGIOLI BORLOTTI KG.2,60 M.JARDIN",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "13",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "806780",
-        "Descrizione articolo": "BIODEGR.BIS POSATE+TOVAGLIOLO 1V PZ 250",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIODEGR.BIS POSATE+TOVAGLIOLO 1V PZ 250",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "791092",
-        "Descrizione articolo": "SENAPE SQUEEZER ML.1000",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "2",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SENAPE SQUEEZER ML.1000",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "2",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "791022",
-        "Descrizione articolo": "MAIONESE SQUEEZER ML.1000",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "6",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "MAIONESE SQUEEZER ML.1000",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "6",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "791192",
-        "Descrizione articolo": "KETCHUP SQUEEZER ML.1100",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "6",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "KETCHUP SQUEEZER ML.1100",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "6",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "8012",
-        "Descrizione articolo": "SALE GROSSO KG.1",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "12",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SALE GROSSO KG.1",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "12",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80256",
-        "Descrizione articolo": "BIBITA LEMONSODA SLEEK LATTINA CL.33",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "48",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIBITA LEMONSODA SLEEK LATTINA CL.33",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "48",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "80280",
-        "Descrizione articolo": "BIBITA THE LIMONE S.BEN.SLEEK LATT.CL.33",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "48",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIBITA THE LIMONE S.BEN.SLEEK LATT.CL.33",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "48",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "806720",
-        "Descrizione articolo": "BIODEGR.BICCHIERE PLA ML.300/400 PZ 50",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "14",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "BIODEGR.BICCHIERE PLA ML.300/400 PZ 50",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "14",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "7674",
-        "Descrizione articolo": "FARINA BIANCA 00 MULTIUSO CORONA KG.1",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "30",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "FARINA BIANCA 00 MULTIUSO CORONA KG.1",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "30",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "3950",
-        "Descrizione articolo": "UOVA M CAL.53-63 (CONF.PZ.90)",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "90",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "UOVA M CAL.53-63 (CONF.PZ.90)",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "90",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "8019",
-        "Descrizione articolo": "ZUCCHERO VELO IMPALPABILE KG. 1",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "2",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "ZUCCHERO VELO IMPALPABILE KG. 1",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "2",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "41176",
-        "Descrizione articolo": "VERDURE PASTELLATE TRIS OROGEL",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "4",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "VERDURE PASTELLATE TRIS OROGEL",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "4",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "806961",
-        "Descrizione articolo": "CONO CARTA JOURNAL 17 X 24 PZ.250",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "2",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "CONO CARTA JOURNAL 17 X 24 PZ.250",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "2",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "189",
-        "Descrizione articolo": "COTTO TOAST 1/2 SV.",
-        "Unità di misura": "KG",
-        "Quantità in ordine": "4,5",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "COTTO TOAST 1/2 SV.",
+        "Unita_di_misura": "KG",
+        "Quantita_in_ordine": "4,5",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "792351",
-        "Descrizione articolo": "PANE PANCARRE' BIANCO G.330 20 FETTE",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "12",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "PANE PANCARRE' BIANCO G.330 20 FETTE",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "12",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "79050",
-        "Descrizione articolo": "CIOCCOLATA NUTELLA VASO GR.450",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "15",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "CIOCCOLATA NUTELLA VASO GR.450",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "15",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "79030",
-        "Descrizione articolo": "CONF.M&G ALBICOCCA GR. 620 VASO",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "6",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "CONF.M&G ALBICOCCA GR. 620 VASO",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "6",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "790374",
-        "Descrizione articolo": "CONF.M&G EDEL MIRTILLO ROSSO G.620 VASO",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "6",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "CONF.M&G EDEL MIRTILLO ROSSO G.620 VASO",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "6",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "813162",
-        "Descrizione articolo": "VILEDA WETTEX.P.SPUG. BLU    26X20 PZ.10",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "VILEDA WETTEX.P.SPUG. BLU    26X20 PZ.10",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "813104",
-        "Descrizione articolo": "SPUGNA + FIBRA GRANDE 10 PZ",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SPUGNA + FIBRA GRANDE 10 PZ",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "813082",
-        "Descrizione articolo": "PANNO SPUGNA SPONTEX 5 PZ.",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "PANNO SPUGNA SPONTEX 5 PZ.",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "99331",
-        "Descrizione articolo": "GUANTI NITRILE NERO 100 PZ \"L\"",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "GUANTI NITRILE NERO 100 PZ \"L\"",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "9960",
-        "Descrizione articolo": "OMAGGIO GREMBIULE COTONE C/PETTORINA",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "10",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "OMAGGIO GREMBIULE COTONE C/PETTORINA",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "10",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "809837",
-        "Descrizione articolo": "SN SANI ACTIV BATTERICIDA ML.750 TRIGG.",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SN SANI ACTIV BATTERICIDA ML.750 TRIGG.",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "809863",
-        "Descrizione articolo": "SN MULTI ACTIV DISINFETT.ML.750 TRIGG.",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SN MULTI ACTIV DISINFETT.ML.750 TRIGG.",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     },
     {
         "Articolo": "8098631",
-        "Descrizione articolo": "SN MULTI ACTIV DISINFET.LIMONE ML.750 TR",
-        "Unità di misura": "NR",
-        "Quantità in ordine": "1",
-        "Quantità Presa": "0"
+        "Descrizione_articolo": "SN MULTI ACTIV DISINFET.LIMONE ML.750 TR",
+        "Unita_di_misura": "NR",
+        "Quantita_in_ordine": "1",
+        "Quantita_Usata": "0"
     }
 ]

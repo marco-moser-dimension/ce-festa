@@ -26,6 +26,22 @@ def login_flow():
         if st.session_state["authentication_status"]:
             authenticator.logout(location='sidebar')
             st.sidebar.title(f"Benvenuto, {st.session_state['name']}! 👋")
+            
+            # Aggiungi link alla pagina delle transazioni
+            st.sidebar.markdown("---")
+            st.sidebar.markdown("### Menu")
+            if st.sidebar.button("📊 Registro Transazioni"):
+                st.switch_page("pages/transazioni.py")
+            
+            # Salva i ruoli dell'utente nella sessione
+            username = st.session_state["username"]
+            if username in config['credentials']['usernames']:
+                user_info = config['credentials']['usernames'][username]
+                if 'roles' in user_info:
+                    st.session_state["user_roles"] = user_info['roles']
+                else:
+                    st.session_state["user_roles"] = ["viewer"]  # Ruolo predefinito
+            
             return True
         
         elif st.session_state["authentication_status"] is False:

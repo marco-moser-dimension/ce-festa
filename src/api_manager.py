@@ -61,15 +61,15 @@ def upload(articolo, alimento, quantità, time, referente):
             if item["Articolo"] == articolo:
                 articolo_trovato = True
                 
-                # Converti la quantità presa in numero
+                # Converti la Quantita_Usata in numero
                 try:
-                    quantita_presa = int(item["Quantità Presa"])
+                    quantita_usata = int(item["Quantita_Usata"])
                 except ValueError:
-                    quantita_presa = 0
+                    quantita_usata = 0
                 
-                # Aggiorna la quantità presa
-                quantita_presa += int(quantità)
-                item["Quantità Presa"] = str(quantita_presa)
+                # Aggiorna la Quantita_Usata
+                quantita_usata += int(quantità)
+                item["Quantita_Usata"] = str(quantita_usata)
                 
                 # Aggiungi la transazione all'array transazioni (crealo se non esiste)
                 if "transazioni" not in item:
