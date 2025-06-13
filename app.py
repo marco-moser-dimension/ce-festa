@@ -31,6 +31,13 @@ if "categoria_selezionata" not in st.session_state:
     
 if "page" not in st.session_state:
     st.session_state.page = "home"
+    
+# Reset delle variabili di stato di navigazione quando si torna alla dashboard
+if "go_to_dashboard" in st.session_state:
+    st.session_state.go_to_dashboard = False
+    
+if "show_delete_confirm" in st.session_state:
+    st.session_state.show_delete_confirm = False
 
 # Ottieni il percorso del file JSON
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -88,6 +95,14 @@ if query:
 else:
     # Limitiamo a 40 articoli per default per migliorare le performance
     articoli_filtrati = get_all_articles(categoria=categoria)[:40]
+
+# Verifica se l'utente è admin per mostrare il pulsante di aggiunta articolo
+is_admin = False
+if "user_roles" in st.session_state and "admin" in st.session_state.user_roles:
+    is_admin = True
+    # Pulsante per aggiungere un nuovo articolo
+    if st.button("➕ Aggiungi Nuovo Articolo"):
+        st.switch_page("pages/nuovo_articolo.py")
 
 # Mostra la galleria con gli articoli filtrati
 display_article_gallery(articoli_filtrati)

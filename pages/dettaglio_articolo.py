@@ -69,6 +69,42 @@ with col2:
         if "user_roles" in st.session_state and "admin" in st.session_state.user_roles:
             is_admin = True
             st.success(f"Accesso come amministratore: {username}")
+            
+            # Pulsanti per modificare o eliminare l'articolo (solo per admin)
+            col_mod, col_del = st.columns(2)
+            with col_mod:
+                if st.button("✏️ Modifica Articolo"):
+                    st.switch_page("pages/modifica_articolo.py")
+            
+            with col_del:
+                # Pulsante per eliminare l'articolo
+                if st.button("🗑️ Elimina Articolo"):
+                    st.session_state.show_delete_confirm = True
+            
+            # Mostra il dialogo di conferma per l'eliminazione
+            if st.session_state.get("show_delete_confirm", False):
+                st.warning(f"Sei sicuro di voler eliminare l'articolo '{articolo['descrizione']}'?")
+                col_yes, col_no = st.columns(2)
+                
+                with col_yes:
+                    if st.button("Sì, elimina"):
+                        from src.db import delete_article
+                        result = delete_article(articolo['codice'])
+                        
+                        if result["success"]:
+                            st.success(result["message"])
+                            # Rimuovi l'articolo selezionato dalla sessione
+                            if "articolo_selezionato" in st.session_state:
+                                del st.session_state.articolo_selezionato
+                            # Torna direttamente alla dashboard
+                            st.switch_page("app.py")
+                        else:
+                            st.error(result["message"])
+                
+                with col_no:
+                    if st.button("No, annulla"):
+                        st.session_state.show_delete_confirm = False
+                        st.rerun()
     
     display_transactions(
         articolo.get('transazioni', []), 

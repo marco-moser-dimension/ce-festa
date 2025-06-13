@@ -23,9 +23,10 @@
             "Articolo": "6706",
             "Descrizione_articolo": "FORM.TN RETTANGOLARE STICA V.FASSA",
             "Unita_di_misura": "KG",
-            "Quantita_in_ordine": "30",
+            "Quantita_in_ordine": "30.0",
             "Quantita_Usata": "0",
-            "Fornitore": "Segata"
+            "Fornitore": "Segata",
+            "url": "https://www.trentiner.it/media/catalog/product/cache/9ad61e2ca3026557c7dc6d57ac47a550/0/1/010549.jpg"
         },
         {
             "Articolo": "189",
@@ -136,7 +137,8 @@
             "Unita_di_misura": "KG",
             "Quantita_in_ordine": "2",
             "Quantita_Usata": "0",
-            "Fornitore": "Segata"
+            "Fornitore": "Segata",
+            "transazioni": []
         },
         {
             "Articolo": "78173",
@@ -493,14 +495,6 @@
             "Quantita_in_ordine": "6",
             "Quantita_Usata": "0",
             "Fornitore": "Segata"
-        },
-        {
-            "Articolo": "7903740",
-            "Descrizione_articolo": "TEST",
-            "Unita_di_misura": "NR",
-            "Quantita_in_ordine": "6",
-            "Quantita_Usata": "0",
-            "Fornitore": "Altro"
         }
     ]
 }

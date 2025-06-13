@@ -423,3 +423,162 @@ def delete_transaction_by_details(article_code, transaction_time, referente, fil
     
     except Exception as e:
         return {"success": False, "message": f"Errore: {str(e)}"}
+
+def add_new_article(article_data, categoria, file_path=DATA_FILE):
+    """
+    Aggiunge un nuovo articolo al file JSON.
+    
+    Args:
+        article_data: Dizionario con i dati dell'articolo
+        categoria: Categoria in cui inserire l'articolo
+        file_path: Percorso del file JSON
+        
+    Returns:
+        dict: Risultato dell'operazione
+    """
+    try:
+        # Leggi il file JSON
+        data = read_data(file_path)
+        
+        # Verifica che la categoria esista
+        if categoria not in data:
+            return {"success": False, "message": f"Categoria {categoria} non trovata"}
+        
+        # Verifica che il codice articolo non esista già
+        article_code = article_data.get("Articolo")
+        if not article_code:
+            return {"success": False, "message": "Codice articolo mancante"}
+        
+        # Controlla se l'articolo esiste già in qualsiasi categoria
+        for cat, articoli in data.items():
+            for item in articoli:
+                if item.get("Articolo") == article_code:
+                    return {"success": False, "message": f"Articolo con codice {article_code} già esistente"}
+        
+        # Aggiungi l'articolo alla categoria specificata
+        data[categoria].append(article_data)
+        
+        # Scrivi il file JSON aggiornato
+        write_data(data, file_path)
+        
+        # Verifica se è stato aggiunto un nuovo fornitore
+        fornitore = article_data.get("Fornitore")
+        nuovo_fornitore = True
+        
+        # Controlla se il fornitore esiste già in qualsiasi categoria
+        for cat, articoli in data.items():
+            for item in articoli:
+                if item.get("Fornitore") == fornitore and item.get("Articolo") != article_code:
+                    nuovo_fornitore = False
+                    break
+            if not nuovo_fornitore:
+                break
+        
+        return {
+            "success": True, 
+            "message": f"Articolo {article_code} aggiunto con successo nella categoria {categoria}",
+            "nuovo_fornitore": nuovo_fornitore,
+            "fornitore": fornitore
+        }
+    
+    except Exception as e:
+        return {"success": False, "message": f"Errore: {str(e)}"}
+
+def update_article(article_code, updated_data, file_path=DATA_FILE):
+    """
+    Aggiorna i dati di un articolo esistente.
+    
+    Args:
+        article_code: Codice dell'articolo da aggiornare
+        updated_data: Dizionario con i dati aggiornati
+        file_path: Percorso del file JSON
+        
+    Returns:
+        dict: Risultato dell'operazione
+    """
+    try:
+        # Leggi il file JSON
+        data = read_data(file_path)
+        
+        # Cerca l'articolo nel file
+        article_found = False
+        categoria_articolo = None
+        
+        for categoria, articoli in data.items():
+            for i, item in enumerate(articoli):
+                if item.get("Articolo") == article_code:
+                    article_found = True
+                    categoria_articolo = categoria
+                    
+                    # Mantieni le transazioni esistenti
+                    if "transazioni" in item and "transazioni" not in updated_data:
+                        updated_data["transazioni"] = item["transazioni"]
+                    
+                    # Aggiorna l'articolo
+                    data[categoria][i] = updated_data
+                    break
+            
+            if article_found:
+                break
+        
+        if not article_found:
+            return {"success": False, "message": f"Articolo {article_code} non trovato"}
+        
+        # Scrivi il file JSON aggiornato
+        write_data(data, file_path)
+        
+        return {
+            "success": True, 
+            "message": f"Articolo {article_code} aggiornato con successo",
+            "categoria": categoria_articolo
+        }
+    
+    except Exception as e:
+        return {"success": False, "message": f"Errore: {str(e)}"}
+
+def delete_article(article_code, file_path=DATA_FILE):
+    """
+    Elimina un articolo dal file JSON.
+    
+    Args:
+        article_code: Codice dell'articolo da eliminare
+        file_path: Percorso del file JSON
+        
+    Returns:
+        dict: Risultato dell'operazione
+    """
+    try:
+        # Leggi il file JSON
+        data = read_data(file_path)
+        
+        # Cerca l'articolo nel file
+        article_found = False
+        categoria_articolo = None
+        
+        for categoria, articoli in data.items():
+            for i, item in enumerate(articoli):
+                if item.get("Articolo") == article_code:
+                    article_found = True
+                    categoria_articolo = categoria
+                    
+                    # Rimuovi l'articolo dalla lista
+                    data[categoria].pop(i)
+                    break
+            
+            if article_found:
+                break
+        
+        if not article_found:
+            return {"success": False, "message": f"Articolo {article_code} non trovato"}
+        
+        # Scrivi il file JSON aggiornato
+        write_data(data, file_path)
+        
+        return {
+            "success": True, 
+            "message": f"Articolo {article_code} eliminato con successo",
+            "categoria": categoria_articolo
+        }
+    
+    except Exception as e:
+        return {"success": False, "message": f"Errore: {str(e)}"}
