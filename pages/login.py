@@ -2,23 +2,21 @@
 
 import streamlit as st
 import streamlit_authenticator as stauth
-import yaml
-from yaml.loader import SafeLoader
 
 def login_flow():
     """
-    Gestisce l'intero flusso di autenticazione.
+    Gestisce l'intero flusso di autenticazione leggendo da st.secrets.
     Restituisce True se l'utente è autenticato, False altrimenti.
     """
     try:
-        with open('./credentials.yaml') as file:
-            config = yaml.load(file, Loader=SafeLoader)
+        # Legge la configurazione direttamente dai secrets di Streamlit
+        config = st.secrets
 
         authenticator = stauth.Authenticate(
-            config['credentials'],
-            config['cookie']['name'],
-            config['cookie']['key'],
-            config['cookie']['expiry_days']
+            config.credentials, # Usa la notazione a punto
+            config.cookie.name,
+            config.cookie.key,
+            config.cookie.expiry_days
         )
 
         authenticator.login()
@@ -27,7 +25,6 @@ def login_flow():
             authenticator.logout(location='sidebar')
             st.sidebar.title(f"Benvenuto, {st.session_state['name']}! 👋")
             
-            # Aggiungi link alla pagina delle transazioni
             st.sidebar.markdown("---")
             st.sidebar.markdown("### Menu")
             if st.sidebar.button("📊 Registro Transazioni"):
@@ -35,12 +32,8 @@ def login_flow():
             
             # Salva i ruoli dell'utente nella sessione
             username = st.session_state["username"]
-            if username in config['credentials']['usernames']:
-                user_info = config['credentials']['usernames'][username]
-                if 'roles' in user_info:
-                    st.session_state["user_roles"] = user_info['roles']
-                else:
-                    st.session_state["user_roles"] = ["viewer"]  # Ruolo predefinito
+            user_info = config.credentials.usernames[username]
+            st.session_state["user_roles"] = user_info.get('roles', ['viewer'])
             
             return True
         
@@ -54,6 +47,7 @@ def login_flow():
 
     except Exception as e:
         st.error(f"Errore nel processo di login: {e}")
+        st.error("Controlla che il file .streamlit/secrets.toml sia configurato correttamente.")
         return False
     
     return False
