@@ -1,5 +1,5 @@
 {
-    "Carne&Formaggi&Pane": [
+    "Carne&Formaggi": [
         {
             "Articolo": "434",
             "Descrizione_articolo": "WURSTEL I CLASSICI S/P 8PZ. 800 G. P.S",
@@ -35,7 +35,9 @@
             "Quantita_in_ordine": "4,5",
             "Quantita_Usata": "0",
             "Fornitore": "Segata"
-        },
+        }
+    ],
+    "Pane": [
         {
             "Articolo": "792351",
             "Descrizione_articolo": "PANE PANCARRE' BIANCO G.330 20 FETTE",
@@ -114,7 +116,7 @@
             "Fornitore": "Segata"
         }
     ],
-    "Bibite": [
+    "Bar": [
         {
             "Articolo": "48009",
             "Descrizione_articolo": "ICE CUBE GHIACCIO ALIM. KG.1,25",
@@ -229,7 +231,7 @@
             "Fornitore": "Segata"
         }
     ],
-    "Uso consumo": [
+    "Condimenti Vari": [
         {
             "Articolo": "7056",
             "Descrizione_articolo": "OLIO SEMI GIRASOLE LT. 1",
@@ -271,6 +273,48 @@
             "Fornitore": "Segata"
         },
         {
+            "Articolo": "81452",
+            "Descrizione_articolo": "SP/PEPE NERO MACINATO G.90 PET RM",
+            "Unita_di_misura": "NR",
+            "Quantita_in_ordine": "1",
+            "Quantita_Usata": "0",
+            "Fornitore": "Segata"
+        },
+        {
+            "Articolo": "791092",
+            "Descrizione_articolo": "SENAPE SQUEEZER ML.1000",
+            "Unita_di_misura": "NR",
+            "Quantita_in_ordine": "2",
+            "Quantita_Usata": "0",
+            "Fornitore": "Segata"
+        },
+        {
+            "Articolo": "791022",
+            "Descrizione_articolo": "MAIONESE SQUEEZER ML.1000",
+            "Unita_di_misura": "NR",
+            "Quantita_in_ordine": "6",
+            "Quantita_Usata": "0",
+            "Fornitore": "Segata"
+        },
+        {
+            "Articolo": "791192",
+            "Descrizione_articolo": "KETCHUP SQUEEZER ML.1100",
+            "Unita_di_misura": "NR",
+            "Quantita_in_ordine": "6",
+            "Quantita_Usata": "0",
+            "Fornitore": "Segata"
+        },
+        {
+            "Articolo": "8012",
+            "Descrizione_articolo": "SALE GROSSO KG.1",
+            "Unita_di_misura": "KG",
+            "Quantita_in_ordine": "12",
+            "Quantita_Usata": "0",
+            "Fornitore": "Segata"
+        }
+    ],
+    "Uso consumo": [
+        {
             "Articolo": "806769",
             "Descrizione_articolo": "BIODEGR.VASCHETTA PATATINE PZ.50",
             "Unita_di_misura": "NR",
@@ -311,50 +355,10 @@
             "Fornitore": "Segata"
         },
         {
-            "Articolo": "81452",
-            "Descrizione_articolo": "SP/PEPE NERO MACINATO G.90 PET RM",
-            "Unita_di_misura": "NR",
-            "Quantita_in_ordine": "1",
-            "Quantita_Usata": "0",
-            "Fornitore": "Segata"
-        },
-        {
             "Articolo": "806780",
             "Descrizione_articolo": "BIODEGR.BIS POSATE+TOVAGLIOLO 1V PZ 250",
             "Unita_di_misura": "NR",
             "Quantita_in_ordine": "4",
-            "Quantita_Usata": "0",
-            "Fornitore": "Segata"
-        },
-        {
-            "Articolo": "791092",
-            "Descrizione_articolo": "SENAPE SQUEEZER ML.1000",
-            "Unita_di_misura": "NR",
-            "Quantita_in_ordine": "2",
-            "Quantita_Usata": "0",
-            "Fornitore": "Segata"
-        },
-        {
-            "Articolo": "791022",
-            "Descrizione_articolo": "MAIONESE SQUEEZER ML.1000",
-            "Unita_di_misura": "NR",
-            "Quantita_in_ordine": "6",
-            "Quantita_Usata": "0",
-            "Fornitore": "Segata"
-        },
-        {
-            "Articolo": "791192",
-            "Descrizione_articolo": "KETCHUP SQUEEZER ML.1100",
-            "Unita_di_misura": "NR",
-            "Quantita_in_ordine": "6",
-            "Quantita_Usata": "0",
-            "Fornitore": "Segata"
-        },
-        {
-            "Articolo": "8012",
-            "Descrizione_articolo": "SALE GROSSO KG.1",
-            "Unita_di_misura": "KG",
-            "Quantita_in_ordine": "12",
             "Quantita_Usata": "0",
             "Fornitore": "Segata"
         },
